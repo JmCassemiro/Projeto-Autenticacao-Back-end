@@ -56,5 +56,5 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 
 
-
+4. **Desenho Arquitetural**:
 <img width="641" alt="Screenshot 2024-09-19 at 18 44 05" src="https://github.com/user-attachments/assets/75eaed4a-c14b-44c3-9261-bef8155bb09c">
