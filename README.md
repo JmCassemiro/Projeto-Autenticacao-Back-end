@@ -19,9 +19,9 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 1. **Instale as dependências**:
    - Certifique-se de ter o [Python](https://www.python.org/) instalado.
-   - Instale Flask e outras dependências necessárias usando pip:
+   - Instale Flask e outras dependências necessárias usando comando abaixo:
      ```bash
-     pip install flask
+     pip install -r requirements.txt
      ```
 
 2. **Estrutura de Diretórios**:
