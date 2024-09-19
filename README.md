@@ -9,12 +9,11 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 ## Estrutura do Projeto
 
-- **`app.py`**: Arquivo principal do Flask que define as rotas e inicia o servidor.
+- **`main.py`**: Arquivo principal que e inicia o servidor.
+- **`routes.py`**: Arquivo que define as rotas do servidor.
 - **`templates/`**: Diretório que contém os arquivos HTML do projeto.
   - **`login.html`**: Página de login.
   - **`signup.html`**: Página de cadastro.
-- **`static/`**: Diretório que contém arquivos estáticos, como CSS e imagens.
-  - **`css/styles.css`**: Arquivo de estilo para as páginas HTML.
 
 ## Configuração
 
@@ -29,19 +28,17 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
    - Crie o diretório do projeto e a estrutura de diretórios conforme mostrado:
      ```
      projeto/
-     ├── app.py
-     ├── static/
-     │   └── css/
-     │       └── styles.css
+     ├── routes.py
      └── templates/
          ├── login.html
          └── signup.html
+     ├── main.py
      ```
 
 3. **Executando o Projeto**:
    - Navegue até o diretório do projeto e execute o aplicativo Flask:
      ```bash
-     python app.py
+     python main.py
      ```
    - O aplicativo estará disponível em `http://localhost:5000`.
 
@@ -50,26 +47,9 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 ### `login.html`
 
 - Campos: Nome de usuário, senha.
-- Botões: "Fazer Login", "Cadastrar" (redireciona para a página de cadastro).
+- Botões: "Esqueci minha senha", "Fazer Login", "Cadastrar" (redireciona para a página de cadastro).
 
 ### `signup.html`
 
 - Campos: Nome, email, confirmação de email, senha, confirmação de senha, data de nascimento.
 - Validações: Verificação de igualdade entre emails e senhas, comprimento mínimo de 8 dígitos para senha.
-
-## Contribuindo
-
-Contribuições são bem-vindas! Para contribuir com o projeto:
-
-1. Faça um fork do repositório.
-2. Crie uma branch para suas alterações.
-3. Faça um commit e envie suas alterações.
-4. Envie um pull request para revisão.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT). Veja o arquivo LICENSE para mais detalhes.
-
-## Contato
-
-Para dúvidas ou sugestões, entre em contato com [seu-email@example.com](mailto:seu-email@example.com).
