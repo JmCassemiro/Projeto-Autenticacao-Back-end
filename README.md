@@ -4,16 +4,20 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 ## Funcionalidades
 
-- **Página de Login**: Permite que os usuários façam login com seu nome de usuário e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
-- **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, confirmação de email, senha, confirmação de senha e data de nascimento. Inclui validação de campos para garantir que os emails e senhas coincidam e que a senha tenha no mínimo 8 dígitos.
+- **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
+- **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, senha, confirmação de senha. Inclui validação de campos para garantir que o email seja válido e que as senhas coincidam e que tenha no mínimo 6 dígitos.
 
 ## Estrutura do Projeto
 
 - **`main.py`**: Arquivo principal que e inicia o servidor.
 - **`routes.py`**: Arquivo que define as rotas do servidor.
+- **`forms.py`**: Arquivo para formulário de registro e login.
+- **`models.py`**: Arquivo que define as classes do programa.
 - **`templates/`**: Diretório que contém os arquivos HTML do projeto.
   - **`login.html`**: Página de login.
-  - **`signup.html`**: Página de cadastro.
+  - **`register.html`**: Página de cadastro.
+  - **`home.html`**: Página incial.
+  - **`base.html`**: Página base para todas as outras.
 
 ## Configuração
 
@@ -28,10 +32,15 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
    - Crie o diretório do projeto e a estrutura de diretórios conforme mostrado:
      ```
      projeto/
-     ├── routes.py
+     ├── app
+     └── routes.py
+     └── forms.py
+     └── models.py
      └── templates/
          ├── login.html
-         └── signup.html
+         └── register.html
+         └── home.html
+         └── base.html
      ├── main.py
      ```
 
@@ -44,15 +53,19 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 ## Detalhes das Páginas
 
+### `home.html`
+
+- Botões: "Fazer Login" (redireciona para a página de login), "Cadastrar" (redireciona para a página de cadastro).
+
 ### `login.html`
 
-- Campos: Nome de usuário, senha.
+- Campos: Email, senha.
 - Botões: "Esqueci minha senha", "Fazer Login", "Cadastrar" (redireciona para a página de cadastro).
 
-### `signup.html`
+### `register.html`
 
-- Campos: Nome, email, confirmação de email, senha, confirmação de senha, data de nascimento.
-- Validações: Verificação de igualdade entre emails e senhas, comprimento mínimo de 8 dígitos para senha.
+- Campos: Nome, email, senha, confirmação de senha.
+- Validações: Verificação de email e igualdade de senhas, comprimento mínimo de 6 dígitos para senha.
 
 ## Desenho Arquitetural
 
