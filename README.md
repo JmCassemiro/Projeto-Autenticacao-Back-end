@@ -32,16 +32,16 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
    - Crie o diretório do projeto e a estrutura de diretórios conforme mostrado:
      ```
      projeto/
-     ├── app
-     └── routes.py
-     └── forms.py
-     └── models.py
-     └── templates/
-         ├── login.html
-         └── register.html
-         └── home.html
-         └── base.html
      ├── main.py
+     └── app
+         ├── routes.py
+         ├── forms.py
+         ├── models.py
+         └── templates/
+             ├── login.html
+             ├── register.html
+             ├── home.html
+             └── base.html
      ```
 
 3. **Executando o Projeto**:
