@@ -1,4 +1,7 @@
-from app import app
+from services import app
+from services.auth_service.routes import auth_blueprint
 
-if __name__ == '__main__':
+app.register_blueprint(auth_blueprint, url_prefix="/auth")
+
+if __name__ == "__main__":
     app.run(debug=True)
