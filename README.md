@@ -7,17 +7,37 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 - **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
 - **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, senha, confirmação de senha. Inclui validação de campos para garantir que o email seja válido e que as senhas coincidam e que tenha no mínimo 6 dígitos.
 
-## Estrutura do Projeto
+# Estrutura do Projeto
 
-- **`main.py`**: Arquivo principal que e inicia o servidor.
-- **`routes.py`**: Arquivo que define as rotas do servidor.
-- **`forms.py`**: Arquivo para formulário de registro e login.
-- **`models.py`**: Arquivo que define as classes do programa.
-- **`templates/`**: Diretório que contém os arquivos HTML do projeto.
-  - **`login.html`**: Página de login.
-  - **`register.html`**: Página de cadastro.
-  - **`home.html`**: Página incial.
-  - **`base.html`**: Página base para todas as outras.
+- **`run.py`**: Arquivo principal que inicia o servidor Flask.
+- **`instante/`**: Diretório que contém os bancos de dados.
+  - `auth.db`**: Arquivo de banco de dados SQLite que armazena as informações de autenticação e registro dos usuários.
+- **`app/`**: Diretório principal que contém os módulos da aplicação.
+  - **`customer/`**: Diretório responsável pelas funcionalidades relacionadas aos clientes.
+    - **`templates/`**: Diretório que contém os templates HTML específicos para clientes.
+      - **`login.html`**: Página de login para clientes.
+      - **`register.html`**: Página de cadastro para clientes.
+    - **`route.py`**: Arquivo que define as rotas específicas para os clientes (login e cadastro).
+    - **`model.py`**: Arquivo que define a classe `Customer`, representando o modelo de dados dos clientes.
+    - **`login.py`**: Arquivo que lida com a lógica de login para clientes.
+    - **`register.py`**: Arquivo que lida com a lógica de registro para clientes.
+
+  - **`employee/`**: Diretório responsável pelas funcionalidades relacionadas aos funcionários.
+    - **`templates/`**: Diretório que contém os templates HTML específicos para funcionários.
+      - **`login.html`**: Página de login para funcionários.
+      - **`register.html`**: Página de cadastro para funcionários.
+    - **`route.py`**: Arquivo que define as rotas específicas para os funcionários (login e cadastro).
+    - **`model.py`**: Arquivo que define a classe `Employee`, representando o modelo de dados dos funcionários.
+    - **`login.py`**: Arquivo que lida com a lógica de login para funcionários.
+    - **`register.py`**: Arquivo que lida com a lógica de registro para funcionários.
+
+  - **`common_templates/`**: Diretório que contém os templates HTML comuns a toda a aplicação.
+    - **`base.html`**: Template base que serve como estrutura para as outras páginas do projeto.
+
+  - **`home/`**: Diretório que contém os itens básicos apenas para demonstração.
+    - **`home.html`**: Template básico para página home.
+    - **`route.py`**: Arquivo que define a rota específica para a págine home.
+  
 
 ## Configuração
 
