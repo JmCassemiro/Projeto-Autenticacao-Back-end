@@ -17,7 +17,7 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
     - **`templates/`**: Diretório que contém os templates HTML específicos para clientes.
       - **`login.html`**: Página de login para clientes.
       - **`register.html`**: Página de cadastro para clientes.
-    - **`route.py`**: Arquivo que define as rotas específicas para os clientes (login e cadastro).
+    - **`routes.py`**: Arquivo que define as rotas específicas para os clientes (login e cadastro).
     - **`model.py`**: Arquivo que define a classe `Customer`, representando o modelo de dados dos clientes.
     - **`login.py`**: Arquivo que lida com a lógica de login para clientes.
     - **`register.py`**: Arquivo que lida com a lógica de registro para clientes.
@@ -25,13 +25,13 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
     - **`templates/`**: Diretório que contém os templates HTML específicos para funcionários.
       - **`login.html`**: Página de login para funcionários.
       - **`register.html`**: Página de cadastro para funcionários.
-    - **`route.py`**: Arquivo que define as rotas específicas para os funcionários (login e cadastro).
+    - **`routes.py`**: Arquivo que define as rotas específicas para os funcionários (login e cadastro).
     - **`model.py`**: Arquivo que define a classe `Employee`, representando o modelo de dados dos funcionários.
     - **`login.py`**: Arquivo que lida com a lógica de login para funcionários.
     - **`register.py`**: Arquivo que lida com a lógica de registro para funcionários.
   - **`common_templates/`**: Diretório que contém os templates HTML comuns a toda a aplicação.
     - **`base.html`**: Template base que serve como estrutura para as outras páginas do projeto.
-  - **`home/`**: Diretório que contém os itens básicos apenas para demonstração.
+  - **`home/`**: Diretório que contém os itens básicos para a página home (apenas para demonstração).
     - **`home.html`**: Template básico para página home.
     - **`route.py`**: Arquivo que define a rota específica para a págine home.
   
@@ -45,26 +45,10 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
      pip install -r requirements.txt
      ```
 
-2. **Estrutura de Diretórios**:
-   - Crie o diretório do projeto e a estrutura de diretórios conforme mostrado:
-     ```
-     projeto/
-     ├── main.py
-     └── app
-         ├── routes.py
-         ├── forms.py
-         ├── models.py
-         └── templates/
-             ├── login.html
-             ├── register.html
-             ├── home.html
-             └── base.html
-     ```
-
-3. **Executando o Projeto**:
+2. **Executando o Projeto**:
    - Navegue até o diretório do projeto e execute o aplicativo Flask:
      ```bash
-     python main.py
+     python run.py
      ```
    - O aplicativo estará disponível em `http://localhost:5000`.
 
@@ -76,7 +60,7 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 ### `login.html`
 
-- Campos: Email, senha.
+- Campos: Username, senha.
 - Botões: "Esqueci minha senha", "Fazer Login", "Cadastrar" (redireciona para a página de cadastro).
 
 ### `register.html`
