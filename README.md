@@ -56,6 +56,7 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 ### `home.html`
 
+- Página apenas para demonstração de como acessar as telas de Login e Registro. (Não fazem parte desse projeto).
 - Botões: "Fazer Login" (redireciona para a página de login), "Cadastrar" (redireciona para a página de cadastro).
 
 ### `login.html`
