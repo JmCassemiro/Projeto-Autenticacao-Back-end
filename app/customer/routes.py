@@ -4,8 +4,8 @@ from .model import Customer
 from .login import LoginForm
 from .register import RegisterForm
 
-customer_login_blueprint = Blueprint("login_customer", __name__, template_folder="templates")
-customer_register_blueprint = Blueprint("register_customer", __name__, template_folder="templates")
+customer_login_blueprint = Blueprint("login_customer", __name__, template_folder="common_templates")
+customer_register_blueprint = Blueprint("register_customer", __name__, template_folder="common_templates")
 
 
 @app.route('/login_customer', methods=['GET', 'POST'])
