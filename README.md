@@ -21,7 +21,6 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
     - **`model.py`**: Arquivo que define a classe `Customer`, representando o modelo de dados dos clientes.
     - **`login.py`**: Arquivo que lida com a lógica de login para clientes.
     - **`register.py`**: Arquivo que lida com a lógica de registro para clientes.
-
   - **`employee/`**: Diretório responsável pelas funcionalidades relacionadas aos funcionários.
     - **`templates/`**: Diretório que contém os templates HTML específicos para funcionários.
       - **`login.html`**: Página de login para funcionários.
@@ -30,10 +29,8 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
     - **`model.py`**: Arquivo que define a classe `Employee`, representando o modelo de dados dos funcionários.
     - **`login.py`**: Arquivo que lida com a lógica de login para funcionários.
     - **`register.py`**: Arquivo que lida com a lógica de registro para funcionários.
-
   - **`common_templates/`**: Diretório que contém os templates HTML comuns a toda a aplicação.
     - **`base.html`**: Template base que serve como estrutura para as outras páginas do projeto.
-
   - **`home/`**: Diretório que contém os itens básicos apenas para demonstração.
     - **`home.html`**: Template básico para página home.
     - **`route.py`**: Arquivo que define a rota específica para a págine home.
