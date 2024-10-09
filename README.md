@@ -11,7 +11,7 @@ Este projeto é um sistema simples de autenticação e cadastro desenvolvido em 
 
 - **`run.py`**: Arquivo principal que inicia o servidor Flask.
 - **`instante/`**: Diretório que contém os bancos de dados.
-  - `auth.db`**: Arquivo de banco de dados SQLite que armazena as informações de autenticação e registro dos usuários.
+  - **`auth.db`**: Arquivo de banco de dados SQLite que armazena as informações de autenticação e registro dos usuários.
 - **`app/`**: Diretório principal que contém os módulos da aplicação.
   - **`customer/`**: Diretório responsável pelas funcionalidades relacionadas aos clientes.
     - **`templates/`**: Diretório que contém os templates HTML específicos para clientes.
