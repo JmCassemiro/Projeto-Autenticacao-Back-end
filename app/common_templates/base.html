@@ -14,7 +14,7 @@
    </head>
    <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('home_page') }}">Neide's</a>
+      <a class="navbar-brand" href="{{ url_for('home.home_page') }}">Neide's</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,10 +23,10 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login_customer_page') }}">Login</a>
+                <a class="nav-link" href="{{ url_for('customer.login_customer_page') }}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('register_customer_page') }}">Cadastrar</a>
+                <a class="nav-link" href="{{ url_for('customer.register_customer_page') }}">Cadastrar</a>
             </li>
         </ul>
       </div>

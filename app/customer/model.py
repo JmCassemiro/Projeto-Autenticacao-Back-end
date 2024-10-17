@@ -1,5 +1,4 @@
-from app import db
-from app import bcrypt
+from app import db, bcrypt
 
 
 class Customer(db.Model):
@@ -17,7 +16,7 @@ class Customer(db.Model):
 
     @password.setter
     def password(self, plain_text_password):
-        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
+        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode("utf-8")
 
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)

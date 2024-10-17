@@ -1,10 +1,9 @@
-from app import app
-from app.customer.routes import customer_login_blueprint, customer_register_blueprint
-from app.home.route import home_blueprint
+from app import create_app, db
 
-app.register_blueprint(customer_login_blueprint, url_prefix="/login_customer")
-app.register_blueprint(customer_register_blueprint, url_prefix="/register_customer")
-app.register_blueprint(home_blueprint, url_prefix="/home")
+app = create_app()
 
-if __name__ == '__main__':
+with app.app_context():
+    db.create_all()
+
+if __name__ == "__main__":
     app.run(debug=True)
