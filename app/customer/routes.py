@@ -26,6 +26,6 @@ def register_customer_page():
         return redirect(url_for('home_page'))
     if form.errors != {}:
         for err_msg in form.errors.values():
-            flash(f'There was an error with creating a user: {err_msg}', category='danger')
+            flash(f'Erro ao criar um usuário: {err_msg}', category='danger')
 
     return render_template('register_customer.html', form=form)
