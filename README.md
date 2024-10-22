@@ -2,6 +2,44 @@
 
 Este projeto é um sistema simples de autenticação e cadastro desenvolvido em Flask. O aplicativo permite que os usuários se registrem e façam login, com validação de campos de entrada e mensagens de erro.
 
+## SOA (Arquitetura Orientada a Serviços)
+
+A Arquitetura Orientada a Serviços (SOA) é um estilo de design de software que permite que diferentes serviços se comuniquem entre si por meio de interfaces bem definidas. Essa abordagem é útil para criar aplicações modulares e escaláveis. 
+
+### Principais características do SOA:
+
+1. **Reusabilidade**: Os serviços podem ser utilizados em diferentes aplicações, promovendo a eficiência no desenvolvimento e na manutenção.
+   
+2. **Interoperabilidade**: Serviços construídos em diferentes tecnologias podem interagir entre si, facilitando a integração de sistemas legados e novos.
+
+3. **Escalabilidade**: A arquitetura pode ser facilmente escalada, permitindo que serviços individuais sejam atualizados ou ampliados sem impactar toda a aplicação.
+
+4. **Manutenção Simplificada**: As atualizações podem ser feitas em serviços individuais, reduzindo o risco de afetar outras partes da aplicação.
+
+5. **Flexibilidade**: A adição de novos serviços ou a modificação de serviços existentes é facilitada, permitindo a adaptação às necessidades de negócios em constante mudança.
+
+### Aplicação no Projeto:
+Neste projeto de autenticação e cadastro, o SOA pode ser aplicado separando as funcionalidades relacionadas a clientes e funcionários em serviços distintos, permitindo que cada um opere de forma independente e interaja por meio de APIs.
+
+---
+
+## SOLID
+
+Os princípios SOLID são cinco diretrizes que visam melhorar a qualidade do software, tornando-o mais legível, reutilizável e fácil de manter. Esses princípios são:
+
+1. **Single Responsibility Principle (SRP)**: Uma classe deve ter uma única responsabilidade, ou seja, deve ter apenas uma razão para mudar. No projeto, cada módulo (como `login.py` e `register.py`) deve ser responsável apenas pela sua funcionalidade específica.
+
+2. **Open/Closed Principle (OCP)**: As classes devem estar abertas para extensão, mas fechadas para modificação. Isso significa que você deve poder adicionar novas funcionalidades sem alterar o código existente. Por exemplo, ao adicionar novos métodos de autenticação, você pode criar novos serviços sem modificar os já existentes.
+
+3. **Liskov Substitution Principle (LSP)**: Objetos de uma classe derivada devem ser substituíveis por objetos da classe base. Isso assegura que as classes derivadas não alterem o comportamento esperado da classe base.
+
+4. **Interface Segregation Principle (ISP)**: Os clientes não devem ser forçados a depender de interfaces que não utilizam. No projeto, você pode criar interfaces específicas para cada tipo de usuário, evitando que todos compartilhem a mesma interface.
+
+5. **Dependency Inversion Principle (DIP)**: Dependa de abstrações, não de concretizações. Isso implica que o código deve depender de interfaces ou classes abstratas em vez de classes concretas. Isso pode ser alcançado usando injeção de dependência para gerenciar instâncias de classes.
+
+### Aplicação no Projeto:
+A adoção dos princípios SOLID neste projeto ajuda a manter o código organizado e modular, facilitando a manutenção e a adição de novas funcionalidades ao sistema de autenticação e cadastro.
+
 ## Funcionalidades
 
 - **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
