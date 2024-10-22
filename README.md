@@ -40,12 +40,13 @@ Os princípios SOLID são cinco diretrizes que visam melhorar a qualidade do sof
 ### Aplicação no Projeto:
 A adoção dos princípios SOLID neste projeto ajuda a manter o código organizado e modular, facilitando a manutenção e a adição de novas funcionalidades ao sistema de autenticação e cadastro.
 
+---
+
 ## Funcionalidades
 
 - **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
 - **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, senha, confirmação de senha. Inclui validação de campos para garantir que o email seja válido e que as senhas coincidam e que tenha no mínimo 6 dígitos.
 
----
 
 # Estrutura do Projeto
 
