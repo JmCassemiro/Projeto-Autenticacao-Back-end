@@ -45,6 +45,8 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 - **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
 - **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, senha, confirmação de senha. Inclui validação de campos para garantir que o email seja válido e que as senhas coincidam e que tenha no mínimo 6 dígitos.
 
+---
+
 # Estrutura do Projeto
 
 - **`run.py`**: Arquivo principal que inicia o servidor Flask.
