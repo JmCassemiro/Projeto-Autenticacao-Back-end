@@ -111,3 +111,8 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 ## Desenho Arquitetural
 
 <img width="641" alt="Screenshot 2024-09-19 at 18 44 05" src="https://github.com/user-attachments/assets/75eaed4a-c14b-44c3-9261-bef8155bb09c">
+
+## Diagrama Comportamental de Atividades
+
+![uml_comportamental-3](https://github.com/user-attachments/assets/5558a319-c052-4615-af37-f9893aa52e61)
+
