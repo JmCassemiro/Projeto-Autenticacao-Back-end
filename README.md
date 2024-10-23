@@ -114,8 +114,6 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 
 ## Diagrama Comportamental de Atividades
 
-![uml_comportamental-3](https://github.com/user-attachments/assets/5558a319-c052-4615-af37-f9893aa52e61)
-
 ![uml_comportamental-2](https://github.com/user-attachments/assets/1ee42a53-f13f-43cb-9f1d-4606b27e927a)
 
 
