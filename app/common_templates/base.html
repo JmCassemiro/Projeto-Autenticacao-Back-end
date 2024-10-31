@@ -14,21 +14,38 @@
    </head>
    <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('home.home_page') }}">Neide's</a>
+      <a class="navbar-brand" href="{{ url_for('home.home_page') }}">Neide</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
         </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('customer.login_customer_page') }}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('customer.register_customer_page') }}">Cadastrar</a>
-            </li>
-        </ul>
+          {% if current_user.is_authenticated %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: lawngreen; font-weight: bold">
+                        <i class="fas fa-coins"></i>
+                        {{ current_user.prettier_budget }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Bem-Vindo, {{ current_user.username }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home.logout_page') }}">Logout</a>
+                </li>
+            </ul>
+          {% else %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('customer.login_customer_page') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('customer.register_customer_page') }}">Registrar</a>
+                </li>
+            </ul>
+          {% endif %}
       </div>
     </nav>
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -60,7 +77,7 @@
    <style>
       body {
       background-color: #F8F8F8;
-      color: black
+      color: black;
       }
    </style>
 </html>

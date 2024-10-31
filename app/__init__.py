@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 import os
@@ -28,5 +29,17 @@ def create_app():
     from app.customer.routes import customer_bp
     app.register_blueprint(home_bp)
     app.register_blueprint(customer_bp)
+
+    # Inicialize o LoginManager
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_view = 'customer.login_customer_page'
+    login_manager.login_message_category = 'info'
+
+    from app.customer.model import Customer
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return Customer.query.get(int(user_id))
 
     return app
