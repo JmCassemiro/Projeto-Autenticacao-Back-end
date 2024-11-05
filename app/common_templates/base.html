@@ -30,10 +30,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Bem-Vindo, {{ current_user.username }}</a>
+                    <a class="nav-link" href="#">Bem-Vindo, {{ current_user.username }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('home.logout_page') }}">Logout</a>
+                    <a class="nav-link" href="{{ url_for('home.logout_page') }}">Sair</a>
                 </li>
             </ul>
           {% else %}

@@ -13,5 +13,5 @@ def home_page():
 @home_bp.route("/logout")
 def logout_page():
     logout_user()
-    flash("You have been logged out!", category='info')
+    flash("Deslogado com sucesso!", category='info')
     return redirect(url_for("home.home_page"))
