@@ -117,3 +117,8 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 ![uml_comportamental-2](https://github.com/user-attachments/assets/1ee42a53-f13f-43cb-9f1d-4606b27e927a)
 
 
+## Slides da apresentação
+
+[Apresentação Arq Software.pptx](https://github.com/user-attachments/files/17639491/Apresentacao.Arq.Software.pptx)
+
+
