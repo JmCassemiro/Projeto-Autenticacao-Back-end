@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -15,7 +13,6 @@ def create_app():
     app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = Config.SQLALCHEMY_DATABASE_URI
     app.config["SECRET_KEY"] = Config.SECRET_KEY
-
 
     db.init_app(app)
 

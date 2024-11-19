@@ -23,7 +23,7 @@ class CustomerModel(db.Model, UserMixin):
     def __init__(self, username, email_address, password_hash=None):
         self.username = username
         self.email_address = email_address
-        self.password_hash = password_hash or ''
+        self.password_hash = password_hash or ""
 
     def __repr__(self):
         return f"<Customer {self.username}>"
@@ -34,7 +34,9 @@ class CustomerModel(db.Model, UserMixin):
 
     @password.setter
     def password(self, plain_text_password):
-        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode("utf-8")
+        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode(
+            "utf-8"
+        )
 
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)

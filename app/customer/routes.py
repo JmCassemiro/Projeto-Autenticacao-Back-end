@@ -1,11 +1,11 @@
-from flask import Blueprint, flash, redirect, render_template, url_for, jsonify
+from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import login_user
 
 from app import db
 from utils.jwt_helper import generate_token
 
 from .login import LoginForm
-from .model import Customer, CustomerModel
+from .model import CustomerModel
 from .register import RegisterForm
 
 customer_bp = Blueprint("customer", __name__, template_folder="templates")
@@ -19,14 +19,13 @@ def login_customer_page():
 
         if user and user.check_password_correction(form.password.data):
             token = generate_token(user.id)
-            response_data = {
-                'message': 'Login bem-sucedido!',
-                'token': token
-            }
+            response_data = {"message": "Login bem-sucedido!", "token": token}
             print(response_data)
             login_user(user)
 
-            flash(f"Login bem-sucedido! Bem-vindo, {user.username}.", category="success")
+            flash(
+                f"Login bem-sucedido! Bem-vindo, {user.username}.", category="success"
+            )
             return redirect(url_for("home.home_page"))
 
         flash("Credenciais erradas! Por favor, tente novamente.", category="danger")
