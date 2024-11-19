@@ -1,39 +1,30 @@
 {% extends 'base.html' %}
+
 {% block title %}
     Login
 {% endblock %}
 
 {% block content %}
-    <body class="text-center">
-        <div class="container">
-            <form method="POST" class="form-signin" style="color:black">
-                {{ form.hidden_tag() }}
-                <h1 class="h3 mb-3 font-weight-normal">
-                    Fazer Login
-                </h1>
-                <br>
+    <div class="container text-center">
+        <form method="POST" class="form-signin">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">Fazer Login</h1>
+            <div class="form-group">
                 {{ form.username.label() }}
                 {{ form.username(class="form-control", placeholder="User Name") }}
-
+            </div>
+            <div class="form-group">
                 {{ form.password.label() }}
                 {{ form.password(class="form-control", placeholder="Password") }}
-
-                <br>
-
-                <div class="checkbox mb-3">
-                   <h6>Ainda não tem uma conta?</h6>
-                   <a class="btn btn-sm btn-secondary" href="{{ url_for('customer.register_customer_page') }}">Cadastrar</a>
-                </div>
-
-                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-
-                <br>
-
-                <div class="checkbox mb-3">
-                   <a class="btn btn-sm btn-secondary" href="#">Logar como funcionário</a>
-                </div>
-
-            </form>
-        </div>
-    </body>
+            </div>
+            <div class="checkbox mb-3">
+                <p>Ainda não tem uma conta?</p>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('customer.register_customer_page') }}">Cadastrar</a>
+            </div>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            <div class="checkbox mb-3">
+                <a class="btn btn-sm btn-secondary" href="#">Logar como funcionário</a>
+            </div>
+        </form>
+    </div>
 {% endblock %}

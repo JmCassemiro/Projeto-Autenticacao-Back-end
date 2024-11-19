@@ -1,30 +1,26 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
-from .model import Customer
+from wtforms import PasswordField, StringField, SubmitField
+from wtforms.validators import (DataRequired, Email, EqualTo, Length,
+                                ValidationError)
+
+from .model import CustomerModel
 
 
 class RegisterForm(FlaskForm):
     def validate_username(self, username):
-        user = Customer.query.filter_by(username=username.data).first()
-        if user:
+        if CustomerModel.query.filter_by(username=username.data).first():
             raise ValidationError("Usuário já cadastrado! Utilize outro.")
 
     def validate_email_address(self, email_address):
-        email = Customer.query.filter_by(email_address=email_address.data).first()
-        if email:
+        if CustomerModel.query.filter_by(email_address=email_address.data).first():
             raise ValidationError("Email já cadastrado. Utilize outro.")
 
     username = StringField(
-        label="User Name:", validators=[Length(min=2, max=30), DataRequired()]
+        "Nome do Usuário:", validators=[Length(min=2, max=30), DataRequired()]
     )
-    email_address = StringField(
-        label="Email Address:", validators=[Email(), DataRequired()]
-    )
-    password = PasswordField(
-        label="Password:", validators=[Length(min=6), DataRequired()]
-    )
+    email_address = StringField("Email:", validators=[Email(), DataRequired()])
+    password = PasswordField("Senha:", validators=[Length(min=6), DataRequired()])
     confirm_password = PasswordField(
-        label="Confirm Password:", validators=[EqualTo("password"), DataRequired()]
+        "Confirmar Senha:", validators=[EqualTo("password"), DataRequired()]
     )
-    submit = SubmitField(label="Criar Conta")
+    submit = SubmitField("Criar Conta")
