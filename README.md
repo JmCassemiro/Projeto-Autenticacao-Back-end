@@ -44,31 +44,38 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 
 # Estrutura do Projeto
 
-- **`run.py`**: Arquivo principal que inicia o servidor Flask.
-- **`instante/`**: Diretório que contém os bancos de dados.
-  - **`auth.db`**: Arquivo de banco de dados SQLite que armazena as informações de autenticação e registro dos usuários.
-- **`app/`**: Diretório principal que contém os módulos da aplicação.
-  - **`customer/`**: Diretório responsável pelas funcionalidades relacionadas aos clientes.
-    - **`templates/`**: Diretório que contém os templates HTML específicos para clientes.
-      - **`login.html`**: Página de login para clientes.
-      - **`register.html`**: Página de cadastro para clientes.
-    - **`routes.py`**: Arquivo que define as rotas específicas para os clientes (login e cadastro).
-    - **`model.py`**: Arquivo que define a classe `Customer`, representando o modelo de dados dos clientes.
-    - **`login.py`**: Arquivo que lida com a lógica de login para clientes.
-    - **`register.py`**: Arquivo que lida com a lógica de registro para clientes.
-  - **`employee/`**: Diretório responsável pelas funcionalidades relacionadas aos funcionários.
-    - **`templates/`**: Diretório que contém os templates HTML específicos para funcionários.
-      - **`login.html`**: Página de login para funcionários.
-      - **`register.html`**: Página de cadastro para funcionários.
-    - **`routes.py`**: Arquivo que define as rotas específicas para os funcionários (login e cadastro).
-    - **`model.py`**: Arquivo que define a classe `Employee`, representando o modelo de dados dos funcionários.
-    - **`login.py`**: Arquivo que lida com a lógica de login para funcionários.
-    - **`register.py`**: Arquivo que lida com a lógica de registro para funcionários.
-  - **`common_templates/`**: Diretório que contém os templates HTML comuns a toda a aplicação.
-    - **`base.html`**: Template base que serve como estrutura para as outras páginas do projeto.
-  - **`home/`**: Diretório que contém os itens básicos para a página home (apenas para demonstração).
-    - **`home.html`**: Template básico para página home.
-    - **`route.py`**: Arquivo que define a rota específica para a págine home.
+```bash
+app/  
+├── common_templates/  
+│   └── base.html             - Template base que serve como estrutura para as outras páginas.
+├── customer/  
+│   ├── templates/  
+│   │   ├── login.html        - Página de login para clientes.  
+│   │   └── register.html     - Página de cadastro para clientes.  
+│   ├── routes.py             - Arquivo que define as rotas específicas para os clientes.
+│   ├── model.py              - Arquivo que define a classe `Customer`.
+│   ├── login.py              - Arquivo que lida com a lógica de login para clientes.  
+│   └── register.py           - Arquivo que lida com a lógica de registro para clientes.
+├── employee/  
+│   ├── templates/  
+│   │   ├── login.html        - Página de login para funcionários.  
+│   │   └── register.html     - Página de cadastro para funcionários.  
+│   ├── login.py              - Arquivo que lida com a lógica de login para funcionários.  
+│   ├── model.py              - Arquivo que define a classe `Employee`.
+│   ├── register.py           - Arquivo que lida com a lógica de registro para funcionários. 
+│   └── routes.py             - Arquivo que define as rotas específicas para os funcionários. 
+├── home/  
+│   ├── home.html             - Template básico para a página home (apenas demonstração).  
+│   └── route.py              - Arquivo que define a rota específica para a página home.  
+└── __init__.py               - Arquivo de inicialização do pacote Flask.
+
+utils/
+├── authentication.db         - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
+├── config.py                 - Onde configurações básicas são definidas.
+└── jwt_helper.py             - Criação do Token de autenticação.
+
+run.py                        - Arquivo principal que inicia o servidor Flask.
+```   
   
 ## Funcionalidades
 
