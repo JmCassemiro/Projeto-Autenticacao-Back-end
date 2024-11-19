@@ -2,7 +2,7 @@ from flask import Blueprint, flash, redirect, render_template, url_for, jsonify
 from flask_login import login_user
 
 from app import db
-from config.jwt_helper import generate_token
+from utils.jwt_helper import generate_token
 
 from .login import LoginForm
 from .model import Customer, CustomerModel

@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
-from config.config import Config
+from utils.config import Config
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
