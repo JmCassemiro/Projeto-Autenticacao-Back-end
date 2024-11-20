@@ -46,34 +46,37 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 
 ```bash
 app/  
-├── common_templates/  
-│   └── base.html             - Template base que serve como estrutura para as outras páginas.
-├── customer/  
-│   ├── templates/  
-│   │   ├── login.html        - Página de login para clientes.  
-│   │   └── register.html     - Página de cadastro para clientes.  
-│   ├── routes.py             - Arquivo que define as rotas específicas para os clientes.
-│   ├── model.py              - Arquivo que define a classe `Customer`.
-│   ├── login.py              - Arquivo que lida com a lógica de login para clientes.  
-│   └── register.py           - Arquivo que lida com a lógica de registro para clientes.
+├── common/  
+│   └── user_model.py         - Arquivo que define a classe mãe `UserModel`.
+│
+├── customer/    
+│   ├── services/
+│   │   ├── signin_form.py    - Arquivo que lida com a lógica de login para clientes.
+│   │   └── signup_form.py    - Arquivo que lida com a lógica de registro para clientes.
+│   ├── model.py              - Arquivo que define a classe `Customer`.         
+│   └── routes.py             - Arquivo que define as rotas específicas para os clientes.
+│
 ├── employee/  
-│   ├── templates/  
-│   │   ├── login.html        - Página de login para funcionários.  
-│   │   └── register.html     - Página de cadastro para funcionários.  
-│   ├── login.py              - Arquivo que lida com a lógica de login para funcionários.  
-│   ├── model.py              - Arquivo que define a classe `Employee`.
-│   ├── register.py           - Arquivo que lida com a lógica de registro para funcionários. 
-│   └── routes.py             - Arquivo que define as rotas específicas para os funcionários. 
+│   ├── services/
+│   │   ├── signin_form.py    - Arquivo que lida com a lógica de login para funcionários.
+│   │   └── signup_form.py    - Arquivo que lida com a lógica de registro para funcionários.
+│   ├── model.py              - Arquivo que define a classe `Employee`.         
+│   └── routes.py             - Arquivo que define as rotas específicas para os funcionários.
+│
 ├── home/  
-│   ├── home.html             - Template básico para a página home (apenas demonstração).  
-│   └── route.py              - Arquivo que define a rota específica para a página home.  
-└── __init__.py               - Arquivo de inicialização do pacote Flask.
-
-utils/
-├── authentication.db         - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
-├── config.py                 - Onde configurações básicas são definidas.
+│   └── routes.py              - Arquivo que define a rota específica para a página home.
+│
+├── templates/
+│   ├── base.html             - Template base que serve como estrutura para as outras páginas.
+│   ├── customer_signin.html  - Página de login para clientes.
+│   ├── customer_signup.html  - Página de cadastro para clientes.
+│   └── home.html             - Template básico para a página home (apenas demonstração).
+│
+├── __init__.py               - Arquivo de inicialização do pacote Flask.
 └── jwt_helper.py             - Criação do Token de autenticação.
 
+authentication.db         - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
+config.py                     - Onde configurações básicas são definidas.
 run.py                        - Arquivo principal que inicia o servidor Flask.
 ```   
   

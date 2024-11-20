@@ -3,39 +3,43 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
-from utils.config import Config
+from config import Config
 
-db = SQLAlchemy()
-bcrypt = Bcrypt()
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = Config.SQLALCHEMY_DATABASE_URI
+app.config["SECRET_KEY"] = Config.SECRET_KEY
+
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+
+login_manager = LoginManager(app)
+login_manager.init_app(app)
+login_manager.login_view = "customer_signin_page"
+login_manager.login_message_category = "info"
+
+from .customer.routes import customer_app
+from .home.routes import home_app
+
+app.register_blueprint(customer_app)
+app.register_blueprint(home_app)
+
+from .customer.model import Customer
+from .employee.model import Employee
 
 
-def create_app():
-    app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = Config.SQLALCHEMY_DATABASE_URI
-    app.config["SECRET_KEY"] = Config.SECRET_KEY
+@login_manager.user_loader
+def load_user(user_id):
+    try:
+        customer = Customer.query.get(int(user_id))
+        if customer:
+            return customer
 
-    db.init_app(app)
+        employee = Employee.query.get(int(user_id))
+        if employee:
+            return employee
 
-    app.home_template_folder = Config.HOME_TEMPLATE_FOLDER
-    app.customer_template_folder = Config.CUSTOMER_TEMPLATE_FOLDER
-    common_templates_folder = Config.COMMON_TEMPLATES_FOLDER
-    app.jinja_loader.searchpath.append(common_templates_folder)
+        return None
 
-    from app.customer.routes import customer_bp
-    from app.home.routes import home_bp
-
-    app.register_blueprint(home_bp)
-    app.register_blueprint(customer_bp)
-
-    login_manager = LoginManager()
-    login_manager.init_app(app)
-    login_manager.login_view = "customer.login_customer_page"
-    login_manager.login_message_category = "info"
-
-    from app.customer.model import CustomerModel
-
-    @login_manager.user_loader
-    def load_user(user_id):
-        return CustomerModel.query.get(int(user_id))
-
-    return app
+    except Exception as e:
+        print(f"Erro ao buscar usuário: {e}")
+        return None

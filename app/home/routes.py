@@ -1,16 +1,19 @@
 from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import logout_user
 
-home_bp = Blueprint("home", __name__, template_folder="templates")
+from app import app
+
+home_app = Blueprint("home_app", __name__)
 
 
-@home_bp.route("/", methods=["GET", "POST"])
+@app.route("/")
+@app.route("/home")
 def home_page():
     return render_template("home.html")
 
 
-@home_bp.route("/logout", methods=["GET", "POST"])
-def logout_page():
+@app.route("/logout")
+def logout():
     logout_user()
-    flash("Você foi desconectado!", category="info")
-    return redirect(url_for("customer.login_customer_page"))
+    flash("Você foi desconectado.", category="info")
+    return redirect(url_for("home_page"))
