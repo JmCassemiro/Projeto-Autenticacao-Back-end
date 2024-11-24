@@ -18,12 +18,15 @@ login_manager.login_view = "customer_signin_page"
 login_manager.login_message_category = "info"
 
 from .customer.routes import customer_app
+from .employee.routes import employee_app
 from .home.routes import home_app
 
 app.register_blueprint(customer_app)
+app.register_blueprint(employee_app)
 app.register_blueprint(home_app)
 
 from .customer.model import Customer
+from .employee.model import Employee
 from .employee.model import Employee
 
 

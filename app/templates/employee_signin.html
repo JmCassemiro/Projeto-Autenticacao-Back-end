@@ -4,16 +4,16 @@ content %}
   <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px">
     <form method="POST" class="form-signin">
       {{ form.hidden_tag() }}
-      <h1 class="h4 mb-4 text-center font-weight-bold">Fazer Login</h1>
+      <h1 class="h4 mb-4 text-center font-weight-bold">Login Funcionário</h1>
 
       <div class="form-group">
-        {{ form.username.label(class="font-weight-bold") }} {{
-        form.username(class="form-control", placeholder="User Name") }}
+        {{ form.employee_id.label(class="font-weight-bold") }} {{
+        form.employee_id(class="form-control", placeholder="6 Dígitos") }}
       </div>
 
       <div class="form-group">
         {{ form.password.label(class="font-weight-bold") }} {{
-        form.password(class="form-control", placeholder="Password") }}
+        form.password(class="form-control", placeholder="Senha") }}
       </div>
 
       {{ form.submit(class="btn btn-primary btn-block btn-lg") }}
@@ -21,13 +21,10 @@ content %}
       <hr class="my-4" />
 
       <div class="text-center">
-        <p class="mb-2">Ainda não tem uma conta?</p>
-        <a class="btn btn-outline-secondary btn-sm mb-2" href="{{ url_for('customer_signup_page') }}">Cadastrar</a>
-      </div>
-
-      <div class="text-center">
-        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('employee_signin_page') }}">Logar como
-          Funcionário</a>
+        <p class="mb-2">Novo Funcionário?</p>
+        <a class="btn btn-outline-secondary btn-sm mb-2" href="{{ url_for('employee_signup_page') }}">Cadastrar</a>
+        <p class="mb-2">Logar como Cliente</p>
+        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('customer_signup_page') }}">Acessar</a>
       </div>
     </form>
   </div>

@@ -24,11 +24,11 @@ class SignupForm(FlaskForm):
     def validate_username(self, username_to_check):
         user = Customer.query.filter_by(username=username_to_check.data).first()
         if user:
-            raise ValidationError("Usuºario já existe.")
+            raise ValidationError("Usuário já cadastrado.")
 
     def validate_email_address(self, email_address_to_check):
         email_address = Customer.query.filter_by(
             email_address=email_address_to_check.data
         ).first()
         if email_address:
-            raise ValidationError("Email já existe")
+            raise ValidationError("Email já cadastrado.")

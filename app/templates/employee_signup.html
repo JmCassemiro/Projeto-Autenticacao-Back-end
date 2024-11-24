@@ -4,27 +4,35 @@ block content %}
   <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px">
     <form method="POST" class="form-signin">
       {{ form.hidden_tag() }}
-      <h1 class="h4 mb-4 text-center font-weight-bold">Criar Conta</h1>
+      <h1 class="h4 mb-4 text-center font-weight-bold">
+        Criar Conta de Funcionário
+      </h1>
 
       <div class="form-group">
         {{ form.username.label(class="font-weight-bold") }} {{
-        form.username(class="form-control", placeholder="Nome") }}
+        form.username(class="form-control", placeholder="Digite seu Nome") }}
       </div>
 
       <div class="form-group">
         {{ form.email_address.label(class="font-weight-bold") }} {{
-        form.email_address(class="form-control", placeholder="Email") }}
+        form.email_address(class="form-control", placeholder="Digite seu Email")
+        }}
+      </div>
+
+      <div class="form-group">
+        {{ form.employee_id.label(class="font-weight-bold") }} {{
+        form.employee_id(class="form-control", placeholder="Digite seu ID (6 Dígitos)") }}
       </div>
 
       <div class="form-group">
         {{ form.password.label(class="font-weight-bold") }} {{
-        form.password(class="form-control", placeholder="Senha") }}
+        form.password(class="form-control", placeholder="Digite sua Senha (6+ Dígitos)") }}
       </div>
 
       <div class="form-group">
         {{ form.confirm_password.label(class="font-weight-bold") }} {{
-        form.confirm_password(class="form-control", placeholder="Confirmar
-        Senha") }}
+        form.confirm_password(class="form-control", placeholder="Digite
+        novamente sua senha") }}
       </div>
 
       {{ form.submit(class="btn btn-primary btn-block btn-lg") }}
@@ -33,7 +41,7 @@ block content %}
 
       <div class="text-center">
         <p class="mb-2">Já tem uma conta?</p>
-        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('customer_signin_page') }}">Login</a>
+        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('employee_signin_page') }}">Login</a>
       </div>
     </form>
   </div>
