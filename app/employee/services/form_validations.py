@@ -1,7 +1,7 @@
 from flask import flash
 from flask_login import login_user
 from app.employee.model import Employee
-from app.jwt_helper import generate_token
+from app.jwt_helper import TokenManager
 from app import db
 
 
@@ -16,7 +16,7 @@ def validade_form_on_signin(form):
               f"Sucesso! Autenticado como: {attempted_employee_id.username}",
               category="success",
           )
-          token = generate_token(attempted_employee_id.user_id)
+          token = TokenManager.generate_token(attempted_employee_id.user_id)
           print({"message": "Login bem-sucedido!", "token": token})
 
           return True
@@ -44,7 +44,7 @@ def validate_form_on_signup(form):
             category="success",
         )
 
-        token = generate_token(user_to_create.id)
+        token = TokenManager.generate_token(user_to_create.id)
         print({"message": "Login bem-sucedido!", "token": token})
 
         return True
