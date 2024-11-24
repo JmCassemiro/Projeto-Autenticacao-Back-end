@@ -72,12 +72,13 @@ app/
 │   ├── base.html                 - Template base que serve como estrutura para as outras páginas.
 │   ├── customer_signin.html      - Página de login para clientes.
 │   ├── customer_signup.html      - Página de cadastro para clientes.
+│   ├── employee_signin.html      - Página de login para funcionários.
+│   ├── employee_signup.html      - Página de cadastro para funcionários.
 │   └── home.html                 - Template básico para a página home (apenas demonstração).
 │
 ├── __init__.py                   - Arquivo de inicialização do pacote Flask.
 └── jwt_helper.py                 - Criação do Token de autenticação.
 
-authentication.db                 - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
 config.py                         - Onde configurações básicas são definidas.
 run.py                            - Arquivo principal que inicia o servidor Flask.
 ```   
