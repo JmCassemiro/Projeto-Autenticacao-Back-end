@@ -47,37 +47,39 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 ```bash
 app/  
 ├── common/  
-│   └── user_model.py         - Arquivo que define a classe mãe `UserModel`.
+│   └── user_model.py             - Arquivo que define a classe mãe `UserModel`.
 │
 ├── customer/    
 │   ├── services/
-│   │   ├── signin_form.py    - Arquivo que lida com a lógica de login para clientes.
-│   │   └── signup_form.py    - Arquivo que lida com a lógica de registro para clientes.
-│   ├── model.py              - Arquivo que define a classe `Customer`.         
-│   └── routes.py             - Arquivo que define as rotas específicas para os clientes.
+│   │   ├── form_validations.py   - Arquivo que lida com a validação de login e cadastro.
+│   │   ├── signin_form.py        - Arquivo que lida com a lógica de login para clientes.
+│   │   └── signup_form.py        - Arquivo que lida com a lógica de registro para clientes.
+│   ├── model.py                  - Arquivo que define a classe `Customer`.         
+│   └── routes.py                 - Arquivo que define as rotas específicas para os clientes.
 │
 ├── employee/  
 │   ├── services/
-│   │   ├── signin_form.py    - Arquivo que lida com a lógica de login para funcionários.
-│   │   └── signup_form.py    - Arquivo que lida com a lógica de registro para funcionários.
-│   ├── model.py              - Arquivo que define a classe `Employee`.         
-│   └── routes.py             - Arquivo que define as rotas específicas para os funcionários.
+│   │   ├── form_validations.py   - Arquivo que lida com a validação de login e cadastro.
+│   │   ├── signin_form.py        - Arquivo que lida com a lógica de login para funcionários.
+│   │   └── signup_form.py        - Arquivo que lida com a lógica de registro para funcionários.
+│   ├── model.py                  - Arquivo que define a classe `Employee`.         
+│   └── routes.py                 - Arquivo que define as rotas específicas para os funcionários.
 │
 ├── home/  
-│   └── routes.py              - Arquivo que define a rota específica para a página home.
+│   └── routes.py                 - Arquivo que define a rota específica para a página home.
 │
 ├── templates/
-│   ├── base.html             - Template base que serve como estrutura para as outras páginas.
-│   ├── customer_signin.html  - Página de login para clientes.
-│   ├── customer_signup.html  - Página de cadastro para clientes.
-│   └── home.html             - Template básico para a página home (apenas demonstração).
+│   ├── base.html                 - Template base que serve como estrutura para as outras páginas.
+│   ├── customer_signin.html      - Página de login para clientes.
+│   ├── customer_signup.html      - Página de cadastro para clientes.
+│   └── home.html                 - Template básico para a página home (apenas demonstração).
 │
-├── __init__.py               - Arquivo de inicialização do pacote Flask.
-└── jwt_helper.py             - Criação do Token de autenticação.
+├── __init__.py                   - Arquivo de inicialização do pacote Flask.
+└── jwt_helper.py                 - Criação do Token de autenticação.
 
-authentication.db         - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
-config.py                     - Onde configurações básicas são definidas.
-run.py                        - Arquivo principal que inicia o servidor Flask.
+authentication.db                 - Arquivo de banco de dados SQLite onde armazena todas as tabelas.
+config.py                         - Onde configurações básicas são definidas.
+run.py                            - Arquivo principal que inicia o servidor Flask.
 ```   
   
 ## Funcionalidades
