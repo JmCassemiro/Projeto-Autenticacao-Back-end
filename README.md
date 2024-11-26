@@ -48,6 +48,8 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 app/  
 ├── common/  
 │   └── user_model.py             - Arquivo que define a classe mãe `UserModel`.
+│   ├── user_signin_form.py        - Arquivo que lida com a lógica de login para usuário geral.
+│   └── user_signup_form.py        - Arquivo que lida com a lógica de registro para usuário geral.
 │
 ├── customer/    
 │   ├── services/
