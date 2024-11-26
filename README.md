@@ -42,6 +42,37 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 
 ---
 
+## Design Patterns
+
+# Uso de Design Patterns no Projeto
+
+## 1. Design Pattern Criacional: Singleton
+### O que é?
+O Singleton garante que uma classe tenha apenas uma única instância, fornecendo um ponto global de acesso a ela.
+
+### Como usar no nosso projeto?
+No sistema de autenticação, o Singleton pode ser usado para gerenciar tokens de autenticação, garantindo que apenas uma instância da classe responsável por geração e validação de tokens exista.
+
+
+## 2. Design Pattern Comportamental: Strategy
+### O que é?
+O Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. Ele permite que o algoritmo varie independentemente dos clientes que o utilizam.
+
+### Como usar no nosso projeto?
+O Strategy será usado para permitir diferentes métodos de autenticação. Por exemplo:
+- Login por senha (via banco de dados)
+- Login por token (JWT)
+
+
+## 3. Design Pattern Estrutural: Adapter
+### O que é?
+O Adapter converte a interface de uma classe para outra que o cliente espera. Ele é útil para integrar sistemas que possuem interfaces incompatíveis.
+
+### Como usar no nosso projeto?
+Se o sistema precisar integrar com um serviço de autenticação externo (como OAuth ou Google Auth), o Adapter pode ser usado para ajustar a interface da API externa ao sistema existente.
+
+---
+
 # Estrutura do Projeto
 
 ```bash
