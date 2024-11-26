@@ -1,9 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField
+from wtforms import PasswordField, SubmitField
 from wtforms.validators import DataRequired
 
 
-class CustomerSigninForm(FlaskForm):
-    username = StringField("User Name:", validators=[DataRequired()])
+class UserSigninForm(FlaskForm):
     password = PasswordField("Password:", validators=[DataRequired()])
     submit = SubmitField("Entrar")

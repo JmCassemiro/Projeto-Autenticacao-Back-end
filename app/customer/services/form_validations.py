@@ -17,8 +17,6 @@ def validade_form_on_signin(form):
               category="success",
           )
           token = TokenManager.generate_token(attempted_user.user_id)
-          print({"message": "Login bem-sucedido!", "token": token})
-
           return True
 
       flash(
@@ -42,9 +40,7 @@ def validate_form_on_signup(form):
           f"Conta criada com sucesso! Você está autenticado como:  {user_to_create.username}",
           category="success",
       )
-      token = TokenManager.generate_token(user_to_create.id)
-      print({"message": "Login bem-sucedido!", "token": token})
-
+      token = TokenManager.generate_token(user_to_create.user_id)
       return True
 
     if form.errors != {}:
