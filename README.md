@@ -45,8 +45,8 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 ## Design Patterns
 
 1. Design Pattern Criacional: Singleton
-### O que é?
-O Singleton garante que uma classe tenha apenas uma única instância, fornecendo um ponto global de acesso a ela.
+      - O que é?
+         - O Singleton garante que uma classe tenha apenas uma única instância, fornecendo um ponto global de acesso a ela.
 
 ### Como usar no nosso projeto?
 No sistema de autenticação, o Singleton pode ser usado para gerenciar tokens de autenticação, garantindo que apenas uma instância da classe responsável por geração e validação de tokens exista.
