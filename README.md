@@ -129,6 +129,11 @@ run.py                            - Arquivo principal que inicia o servidor Flas
 
 ![uml_comportamental-2](https://github.com/user-attachments/assets/1ee42a53-f13f-43cb-9f1d-4606b27e927a)
 
+## Diagrama de classe
+
+![Diagrama de Classes drawio](https://github.com/user-attachments/assets/dcffc968-b256-4cf8-bc18-2dc6c5f68856)
+
+
 
 ## Slides da apresentação
 
