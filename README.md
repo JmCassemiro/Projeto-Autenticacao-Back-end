@@ -138,7 +138,7 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
   - `Content-Type: application/x-www-form-urlencoded`
 - **Body (Form Data)**:
   ```text
-  username=<seu_username>
+  employee_id=<id_funcionario>
   password=<sua_senha>
 - Resposta (200 - OK):
    - Usuário autenticado e redirecionado
@@ -154,7 +154,9 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
   ```text
   username=<seu_username>
   email=<seu_email>
+  employee_id=<id_funcionario>
   password=<sua_senha>
+  confirm_password=<confirmar_sua_senha>
 - Resposta (200 - OK):
    - Funcionário registrado com sucesso
 - Erros:
@@ -189,6 +191,7 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
   username=<seu_username>
   email=<seu_email>
   password=<sua_senha>
+  confirm_password=<confirmar_sua_senha>
 - Resposta (200 - OK):
    - Cliente registrado com sucesso
 - Erros:
