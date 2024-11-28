@@ -128,7 +128,6 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
 ## **Base URL**
 `http://127.0.0.1:5000/`
 
----
 
 ## **Endpoints de Funcionários (Employee)**
 
