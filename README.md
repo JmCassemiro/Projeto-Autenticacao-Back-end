@@ -163,7 +163,7 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
 
 
 
-## **Endpoints de CLientes (Customer)**
+## **Endpoints de Clientes (Customer)**
 
 ### **1. Login do Cliente**
 - **Endpoint**: `POST /customer-signin`
@@ -179,7 +179,7 @@ Este documento descreve os endpoints disponíveis para autenticação de funcion
 - Erros:
    - 401: Credenciais inválidas
 
- ### **2. Registro de Funcionário**
+ ### **2. Registro de Clientes**
  - **Endpoint**: `POST /customer-signup`
 - **Descrição**: Registra um cliente no sistema.
 - **Headers**:
