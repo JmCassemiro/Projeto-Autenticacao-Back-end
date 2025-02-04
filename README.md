@@ -42,12 +42,43 @@ A adoção dos princípios SOLID neste projeto ajuda a manter o código organiza
 
 ---
 
+## Design Patterns
+
+1. Design Pattern Criacional: Singleton
+      - O que é?
+         - O Singleton garante que uma classe tenha apenas uma única instância, fornecendo um ponto global de acesso a ela.
+
+      - Como usar no nosso projeto?
+         - No sistema de autenticação, o Singleton pode ser usado para gerenciar tokens de autenticação, garantindo que apenas uma instância da classe responsável por geração e validação de tokens exista.
+
+
+2. Design Pattern Comportamental: Strategy
+      - O que é?
+         - O Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. Ele permite que o algoritmo varie independentemente dos clientes que o utilizam.
+
+      - Como usar no nosso projeto?
+         - O Strategy será usado para permitir diferentes métodos de autenticação. Por exemplo:
+         - Login por senha (via banco de dados)
+         - Login por token (JWT)
+
+
+3. Design Pattern Estrutural: Adapter
+      - O que é?
+         - O Adapter converte a interface de uma classe para outra que o cliente espera. Ele é útil para integrar sistemas que possuem interfaces incompatíveis.
+
+      - Como usar no nosso projeto?
+         - Se o sistema precisar integrar com um serviço de autenticação externo (como OAuth ou Google Auth), o Adapter pode ser usado para ajustar a interface da API externa ao sistema existente.
+
+---
+
 # Estrutura do Projeto
 
 ```bash
 app/  
 ├── common/  
-│   └── user_model.py             - Arquivo que define a classe mãe `UserModel`.
+│   ├── user_model.py             - Arquivo que define a classe mãe `UserModel`.
+│   ├── user_signin_form.py       - Arquivo que lida com a lógica de login para usuário geral.
+│   └── user_signup_form.py       - Arquivo que lida com a lógica de registro para usuário geral.
 │
 ├── customer/    
 │   ├── services/
@@ -87,6 +118,87 @@ run.py                            - Arquivo principal que inicia o servidor Flas
 
 - **Página de Login**: Permite que os usuários façam login com seu email e senha. Inclui um link para a página de cadastro e um link para recuperação de senha.
 - **Página de Cadastro**: Permite que os usuários se registrem com informações como nome, email, senha, confirmação de senha. Inclui validação de campos para garantir que o email seja válido e que as senhas coincidam e que tenha no mínimo 6 dígitos.
+
+---
+
+# **Documentação dos Endpoints - Autenticação**
+
+Este documento descreve os endpoints disponíveis para autenticação de funcionários e clientes, além de exemplos para integração.
+
+## **Base URL**
+`http://127.0.0.1:5000/`
+
+
+## **Endpoints de Funcionários (Employee)**
+
+### **1. Login do Funcionário**
+- **Endpoint**: `POST /employee-signin`
+- **Descrição**: Autentica um funcionário no sistema.
+- **Headers**:
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body (Form Data)**:
+  ```text
+  employee_id=<id_funcionario>
+  password=<sua_senha>
+- Resposta (200 - OK):
+   - Usuário autenticado e redirecionado
+- Erros:
+   - 401: Credenciais inválidas
+
+ ### **2. Registro de Funcionário**
+ - **Endpoint**: `POST /employee-signup`
+- **Descrição**: Registra um funcionário no sistema.
+- **Headers**:
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body (Form Data)**:
+  ```text
+  username=<seu_username>
+  email=<seu_email>
+  employee_id=<id_funcionario>
+  password=<sua_senha>
+  confirm_password=<confirmar_sua_senha>
+- Resposta (200 - OK):
+   - Funcionário registrado com sucesso
+- Erros:
+   - 400: Dados inválidos
+   - 409: Usuário já existe
+
+
+
+## **Endpoints de Clientes (Customer)**
+
+### **1. Login do Cliente**
+- **Endpoint**: `POST /customer-signin`
+- **Descrição**: Autentica um cliente no sistema.
+- **Headers**:
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body (Form Data)**:
+  ```text
+  username=<seu_username>
+  password=<sua_senha>
+- Resposta (200 - OK):
+   - Usuário autenticado e redirecionado
+- Erros:
+   - 401: Credenciais inválidas
+
+ ### **2. Registro de Clientes**
+ - **Endpoint**: `POST /customer-signup`
+- **Descrição**: Registra um cliente no sistema.
+- **Headers**:
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body (Form Data)**:
+  ```text
+  username=<seu_username>
+  email=<seu_email>
+  password=<sua_senha>
+  confirm_password=<confirmar_sua_senha>
+- Resposta (200 - OK):
+   - Cliente registrado com sucesso
+- Erros:
+   - 400: Dados inválidos
+   - 409: Usuário já existe
+
+---
 
 ## Configuração
 
@@ -129,8 +241,13 @@ run.py                            - Arquivo principal que inicia o servidor Flas
 
 ![uml_comportamental-2](https://github.com/user-attachments/assets/1ee42a53-f13f-43cb-9f1d-4606b27e927a)
 
+## Diagrama de classe
 
-## Slides da apresentação
+![Diagrama de Classes drawio](https://github.com/user-attachments/assets/dcffc968-b256-4cf8-bc18-2dc6c5f68856)
+
+
+
+## Slides da apresentação 1
 
 [Apresentação Arq Software.pptx](https://github.com/user-attachments/files/17639491/Apresentacao.Arq.Software.pptx)
 
