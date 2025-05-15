@@ -1,6 +1,6 @@
 # Projeto Flask - Sistema de Autenticação e Cadastro
 
-Este projeto é um sistema simples de autenticação e cadastro desenvolvido em Flask. O aplicativo permite que os usuários se registrem e façam login, com validação de campos de entrada e mensagens de erro.
+Este projeto é um sistema de autenticação e cadastro desenvolvido em Flask. O aplicativo permite que os usuários se registrem e façam login, com validação de campos de entrada e mensagens de erro.
 
 ## SOA (Arquitetura Orientada a Serviços)
 
